@@ -25,7 +25,7 @@ jobs:
         include:
           #  两行一组，删除不需要的版本
           - platform: ds918p
-            version: 6.2.4-25556
+            version: 7.0.1-42218
 
     steps:
       - name: 检出项目文件
@@ -79,6 +79,12 @@ jobs:
           ./redpill_tool_chain.sh add https://github.com/tossp/redpill-tool-chain/raw/master/extensions/redpill-virtio.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/mlx4_core/rpext-index.json
           ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igb/rpext-index.json
+          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/iavf/rpext-index.json
+          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/pocopico/rp-ext/master/igbvf/rpext-index.json
+          ./redpill_tool_chain.sh add https://raw.githubusercontent.com/jim3ma/synology-igc/master/igc/rpext-index.json
+          
+          
+          
 
       - name: 添加扩展驱动[dva3221]
         if: matrix.platform == 'dva3221'
